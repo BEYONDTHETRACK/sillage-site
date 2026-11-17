@@ -8,6 +8,21 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/img/sillage-mail.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <meta name="description" content="Sillage, l'app vélo qui te donne la météo sur ta trace GPX : vent, pluie, température, et la meilleure heure pour partir.">
+<link rel="alternate" hreflang="fr" href="https://sillage-ride.eu/">
+<link rel="alternate" hreflang="en" href="https://sillage-ride.eu/en/">
+<link rel="alternate" hreflang="x-default" href="https://sillage-ride.eu/">
+<script>
+/* Langue : un navigateur qui n'est pas en français va sur /en/, sauf choix enregistré (sélecteur FR / EN) ou robot d'indexation. */
+(function () {
+  try {
+    var c = localStorage.getItem('sillage-lang');
+    if (c === 'fr' || /[?&]lang=fr/.test(location.search)) return;
+    if (/bot|crawl|spider|slurp|google|bing|lighthouse/i.test(navigator.userAgent)) return;
+    var l = ((navigator.languages && navigator.languages[0]) || navigator.language || 'fr').toLowerCase();
+    if (c === 'en' || (!c && l.slice(0, 2) !== 'fr')) location.replace('/en/' + location.hash);
+  } catch (e) {}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
 <style>
@@ -58,6 +73,8 @@ a{color:#23629A}a:hover{color:#14201B}
 .sl-nl [hidden]{display:none !important}
 .sl-nl button[type=submit]{min-height:52px;border:0;border-radius:999px;background:#14201B;color:#FFFFFF;font:inherit;font-weight:800;font-size:17px;cursor:pointer}
 .sl-nl button[type=submit]:hover{background:#23629A}
+.sl-lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;box-sizing:border-box;padding:0 10px;border:1px solid #CDD4CE;border-radius:999px;text-decoration:none;color:#14201B;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;letter-spacing:.06em}
+.sl-lang:hover{border-color:#14201B;color:#14201B}
 @keyframes sl-fade{from{opacity:0}to{opacity:1}}
 @media (max-width: 760px){
 .sl-stage{display:flex;flex-direction:column}
@@ -104,6 +121,7 @@ a{color:#23629A}a:hover{color:#14201B}
 <a class="sl-navlink" href="#ultra" style="text-decoration: none; color: #14201B">Ultra</a>
 <a class="sl-navlink" href="#velotaf" style="text-decoration: none; color: #14201B">Commute</a>
 <a class="sl-navlink" href="#modeles" style="text-decoration: none; color: #14201B">Modèles météo</a>
+<a class="sl-lang" href="/en/" hreflang="en" lang="en" aria-label="English version" onclick="try{localStorage.setItem('sillage-lang','en')}catch(e){}">EN</a>
 <a href="#newsletter" style="text-decoration: none; background: #E0A21B; color: #14201B; padding: 11px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; font-weight: 700">Me prévenir</a>
 </div>
 </nav>
