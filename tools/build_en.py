@@ -15,7 +15,7 @@ DST = ROOT / 'en' / 'index.html'
 TXT = {
 "Carte": "Map",
 "Carte · les points utiles des cyclistes": "Map · the places cyclists need",
-"De l'eau, du pain, un abri. Là où tu roules.": "Water, bread, shelter. Wherever you ride.",
+"De l'eau, un ravito, un abri. Là où tu roules.": "Water, food, shelter. Wherever you ride.",
 "Fontaines, boulangeries, épiceries, bivouacs, abris, cafés, ateliers vélo, prises pour recharger : plus d'un million de points en France, et l'Europe en route. Les cyclistes en ajoutent, les vérifient et laissent leurs avis. Même sans réseau, ils restent sur ton téléphone.":
   "Water fountains, bakeries, grocery shops, bivouac spots, shelters, cafés, bike repair shops, places to charge up: over a million points in France, with the rest of Europe on its way. Cyclists add them, check them and leave reviews. Even with no signal, they stay on your phone.",
 "Carte autour du lac d'Annecy avec les points utiles : fontaines, boulangeries, épiceries, bivouacs, abris, cafés, atelier vélo et recharge ; une fontaine à Bluffy est sélectionnée, vérifiée par les cyclistes":
