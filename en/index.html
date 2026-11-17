@@ -10,6 +10,7 @@
 <meta name="description" content="Sillage, the cycling app that gives you the weather along your GPX route: wind, rain, temperature, and the best time to set off.">
 <link rel="alternate" hreflang="fr" href="https://sillage-ride.eu/">
 <link rel="alternate" hreflang="en" href="https://sillage-ride.eu/en/">
+<link rel="alternate" hreflang="de" href="https://sillage-ride.eu/de/">
 <link rel="alternate" hreflang="x-default" href="https://sillage-ride.eu/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
@@ -62,6 +63,8 @@ a{color:#23629A}a:hover{color:#14201B}
 .sl-nl button[type=submit]{min-height:52px;border:0;border-radius:999px;background:#14201B;color:#FFFFFF;font:inherit;font-weight:800;font-size:17px;cursor:pointer}
 .sl-nl button[type=submit]:hover{background:#23629A}
 .sl-lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;box-sizing:border-box;padding:0 10px;border:1px solid #CDD4CE;border-radius:999px;text-decoration:none;color:#14201B;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;letter-spacing:.06em}
+.sl-langsel{display:none;appearance:none;-webkit-appearance:none;min-height:40px;padding:0 26px 0 12px;border:1px solid #CDD4CE;border-radius:999px;background:#FFFFFF url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%2314201B' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;color:#14201B;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;letter-spacing:.06em;cursor:pointer}
+.sl-lang+.sl-lang{margin-left:-14px}
 .sl-lang:hover{border-color:#14201B;color:#14201B}
 .sl-mchips{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:6px;padding:8px;background:rgba(255,255,255,0.92);border-radius:16px;box-shadow:0 2px 10px rgba(20,32,27,0.12);overflow-x:auto}
 .sl-mchip{flex:1 0 auto;min-width:54px;display:flex;flex-direction:column;align-items:center;gap:4px}
@@ -86,6 +89,10 @@ a{color:#23629A}a:hover{color:#14201B}
 .sl-attr{bottom:6px !important}
 .sl-days{grid-template-columns:repeat(5,minmax(112px,1fr)) !important;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
 .sl-navlink{display:none}
+.sl-lang{display:none !important}
+.sl-langsel{display:inline-block}
+nav[aria-label] > div{gap:10px !important}
+nav[aria-label] a[href="#newsletter"]{padding:9px 14px !important;min-height:40px !important}
 .sl-mstage{grid-template-columns:1fr !important}
 .sl-mmap{min-height:440px !important}
 .sl-mchip{min-width:46px}
@@ -125,6 +132,8 @@ a{color:#23629A}a:hover{color:#14201B}
 <a class="sl-navlink" href="#carte" style="text-decoration: none; color: #14201B">Map</a>
 <a class="sl-navlink" href="#modeles" style="text-decoration: none; color: #14201B">Weather models</a>
 <a class="sl-lang" href="/" hreflang="fr" lang="fr" aria-label="Version française" onclick="try{localStorage.setItem('sillage-lang','fr')}catch(e){}">FR</a>
+<a class="sl-lang" href="/de/" hreflang="de" lang="de" aria-label="Deutsche Version" onclick="try{localStorage.setItem('sillage-lang','de')}catch(e){}">DE</a>
+<select class="sl-langsel" aria-label="Langue · Language · Sprache" onchange="try{localStorage.setItem('sillage-lang',this.value)}catch(e){};location.href=this.value==='fr'?'/':'/'+this.value+'/'"><option value="fr">FR</option><option value="en" selected>EN</option><option value="de">DE</option></select>
 <a href="#newsletter" style="text-decoration: none; background: #E0A21B; color: #14201B; padding: 11px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; font-weight: 700">Notify me</a>
 </div>
 </nav>

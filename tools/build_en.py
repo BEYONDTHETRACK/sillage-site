@@ -377,6 +377,7 @@ PATHS = [
 ('href="/mentions-legales/"', 'href="/en/legal-notice/"'),
 ('href="/confidentialite/"', 'href="/en/privacy/"'),
 ('<html lang="fr">', '<html lang="en">'),
+('<option value="fr" selected>FR</option><option value="en">EN</option><option value="de">DE</option>', '<option value="fr">FR</option><option value="en" selected>EN</option><option value="de">DE</option>'),
 ('<a class="sl-lang" href="/en/" hreflang="en" lang="en" aria-label="English version" onclick="try{localStorage.setItem(\'sillage-lang\',\'en\')}catch(e){}">EN</a>',
  '<a class="sl-lang" href="/" hreflang="fr" lang="fr" aria-label="Version française" onclick="try{localStorage.setItem(\'sillage-lang\',\'fr\')}catch(e){}">FR</a>'),
 
@@ -389,7 +390,7 @@ def norm(s):
     return ' '.join(s.split())
 
 
-def build():
+def build(TXT=TXT, JS=JS, PATHS=PATHS, DST=DST, FEELS=r"'feels like \1 °C'"):
     h = SRC.read_text()
     missing = set()
     # sépare script/style du reste
@@ -397,7 +398,7 @@ def build():
     out = []
     for p in parts:
         if p.startswith('<script'):
-            p = re.sub(r"'(\d+) °C ressenti'", r"'feels like \1 °C'", p)
+            p = re.sub(r"'(\d+) °C ressenti'", FEELS, p)
             for a, b in JS:
                 if a not in p and 'consent.js' not in p and len(p) > 2000:
                     missing.add('JS: ' + a[:60])

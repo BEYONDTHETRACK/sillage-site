@@ -4,8 +4,13 @@
   var GA_ID = 'G-3G1455E0RN';
   var KEY = 'sillage-consent';
   var MAX_AGE = 182 * 24 * 3600 * 1000; // 6 mois
-  var EN = (document.documentElement.lang || 'fr').slice(0, 2) === 'en';
-  var TXT = EN ? {
+  var LG = (document.documentElement.lang || 'fr').slice(0, 2);
+  var TXT = LG === 'de' ? {
+    t: 'Reichweitenmessung',
+    p: 'Mit deiner Zustimmung nutzen wir Google Analytics, um die Besuche dieser Website zu zählen und zu sehen, welche Seiten gelesen werden. Vor deiner Wahl wird nichts an Google gesendet.',
+    more: 'Mehr erfahren', href: '/en/privacy/#audience',
+    yes: 'Alle akzeptieren', no: 'Alle ablehnen', manage: 'Cookie-Einstellungen'
+  } : LG === 'en' ? {
     t: 'Audience measurement',
     p: 'With your consent, we use Google Analytics to count visits to this website and see which pages are read. No data is sent to Google before you choose.',
     more: 'Learn more', href: '/en/privacy/#audience',
