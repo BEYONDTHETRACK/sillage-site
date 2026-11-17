@@ -372,6 +372,7 @@ JS = [
 
 EN_LINK = '<a class="sl-lang" href="/en/" hreflang="en" lang="en" aria-label="English version" onclick="try{localStorage.setItem(\'sillage-lang\',\'en\')}catch(e){}">EN</a>'
 DE_LINK = '<a class="sl-lang" href="/de/" hreflang="de" lang="de" aria-label="Deutsche Version" onclick="try{localStorage.setItem(\'sillage-lang\',\'de\')}catch(e){}">DE</a>'
+ES_LINK = '<a class="sl-lang" href="/es/" hreflang="es" lang="es" aria-label="Versión en español" onclick="try{localStorage.setItem(\'sillage-lang\',\'es\')}catch(e){}">ES</a>'
 FR_LINK = '<a class="sl-lang" href="/" hreflang="fr" lang="fr" aria-label="Version française" onclick="try{localStorage.setItem(\'sillage-lang\',\'fr\')}catch(e){}">FR</a>'
 
 PATHS = [
@@ -380,8 +381,8 @@ PATHS = [
 ('href="/mentions-legales/"', 'href="/en/legal-notice/"'),
 ('href="/confidentialite/"', 'href="/en/privacy/"'),
 ('<html lang="fr">', '<html lang="de">'),
-('<option value="fr" selected>FR</option><option value="en">EN</option><option value="de">DE</option>', '<option value="fr">FR</option><option value="en">EN</option><option value="de" selected>DE</option>'),
-(EN_LINK + '\n' + DE_LINK, FR_LINK + '\n' + EN_LINK),
+('<option value="fr" selected>FR</option><option value="en">EN</option><option value="de">DE</option><option value="es">ES</option>', '<option value="fr">FR</option><option value="en">EN</option><option value="de" selected>DE</option><option value="es">ES</option>'),
+(EN_LINK + '\n' + DE_LINK + '\n' + ES_LINK, FR_LINK + '\n' + EN_LINK + '\n' + ES_LINK),
 # menu : mot court pour tenir sur une ligne sur téléphone
 ('font-weight: 700">Benachrichtige mich</a>', 'font-weight: 700">Vormerken</a>'),
 ]

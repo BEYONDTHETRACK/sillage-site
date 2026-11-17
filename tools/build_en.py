@@ -377,7 +377,7 @@ PATHS = [
 ('href="/mentions-legales/"', 'href="/en/legal-notice/"'),
 ('href="/confidentialite/"', 'href="/en/privacy/"'),
 ('<html lang="fr">', '<html lang="en">'),
-('<option value="fr" selected>FR</option><option value="en">EN</option><option value="de">DE</option>', '<option value="fr">FR</option><option value="en" selected>EN</option><option value="de">DE</option>'),
+('<option value="fr" selected>FR</option><option value="en">EN</option><option value="de">DE</option><option value="es">ES</option>', '<option value="fr">FR</option><option value="en" selected>EN</option><option value="de">DE</option><option value="es">ES</option>'),
 ('<a class="sl-lang" href="/en/" hreflang="en" lang="en" aria-label="English version" onclick="try{localStorage.setItem(\'sillage-lang\',\'en\')}catch(e){}">EN</a>',
  '<a class="sl-lang" href="/" hreflang="fr" lang="fr" aria-label="Version française" onclick="try{localStorage.setItem(\'sillage-lang\',\'fr\')}catch(e){}">FR</a>'),
 

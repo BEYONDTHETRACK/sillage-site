@@ -5,7 +5,12 @@
   var KEY = 'sillage-consent';
   var MAX_AGE = 182 * 24 * 3600 * 1000; // 6 mois
   var LG = (document.documentElement.lang || 'fr').slice(0, 2);
-  var TXT = LG === 'de' ? {
+  var TXT = LG === 'es' ? {
+    t: 'Medición de audiencia',
+    p: 'Con tu consentimiento, usamos Google Analytics para contar las visitas a este sitio y ver qué páginas se leen. No se envía nada a Google antes de que elijas.',
+    more: 'Más información', href: '/en/privacy/#audience',
+    yes: 'Aceptar todo', no: 'Rechazar todo', manage: 'Gestionar cookies'
+  } : LG === 'de' ? {
     t: 'Reichweitenmessung',
     p: 'Mit deiner Zustimmung nutzen wir Google Analytics, um die Besuche dieser Website zu zählen und zu sehen, welche Seiten gelesen werden. Vor deiner Wahl wird nichts an Google gesendet.',
     more: 'Mehr erfahren', href: '/en/privacy/#audience',
