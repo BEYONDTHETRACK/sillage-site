@@ -13,6 +13,38 @@ DST = ROOT / 'en' / 'index.html'
 
 # Textes visibles et attributs (texte exact, espaces ramenés à un seul)
 TXT = {
+"Carte": "Map",
+"Carte · les points utiles des cyclistes": "Map · the places cyclists need",
+"De l'eau, du pain, un abri. Là où tu roules.": "Water, bread, shelter. Wherever you ride.",
+"Fontaines, boulangeries, épiceries, bivouacs, abris, cafés, ateliers vélo, prises pour recharger : plus d'un million de points en France, et l'Europe en route. Les cyclistes en ajoutent, les vérifient et laissent leurs avis. Même sans réseau, ils restent sur ton téléphone.":
+  "Water fountains, bakeries, grocery shops, bivouac spots, shelters, cafés, bike repair shops, places to charge up: over a million points in France, with the rest of Europe on its way. Cyclists add them, check them and leave reviews. Even with no signal, they stay on your phone.",
+"Carte autour du lac d'Annecy avec les points utiles : fontaines, boulangeries, épiceries, bivouacs, abris, cafés, atelier vélo et recharge ; une fontaine à Bluffy est sélectionnée, vérifiée par les cyclistes":
+  "Map around Lake Annecy with useful places: water fountains, bakeries, grocery shops, bivouac spots, shelters, cafés, a bike repair shop and a charging point; a fountain in Bluffy is selected, verified by cyclists",
+"Eau": "Water", "Pain": "Bakery", "Épicerie": "Shop", "Bivouac": "Camp", "Abri": "Shelter", "Café": "Café", "Atelier": "Repair", "Recharge": "Charge",
+"+ Ajouter": "+ Add",
+"© contributeurs OpenStreetMap · CyclOSM": "© OpenStreetMap contributors · CyclOSM",
+"Fontaine du village": "Village fountain",
+"Eau potable · Bluffy · à 40 m de ta trace": "Drinking water · Bluffy · 40 m from your route",
+"Vérifié par les cyclistes": "Verified by cyclists",
+"Toujours là ?": "Still there?",
+"Oui, ça coule": "Yes, it flows",
+"Non, à sec": "No, dry",
+"5 étoiles sur 5": "5 stars out of 5",
+"4 étoiles sur 5": "4 stars out of 5",
+"Eau fraîche et bon débit, parfait avant la montée vers Thônes.": "Cool water and a good flow, perfect before the climb to Thônes.",
+"Un·e cycliste · il y a 3 jours": "A cyclist · 3 days ago",
+"Coupée l’hiver : elle coule d’avril à octobre.": "Turned off in winter: it flows from April to October.",
+"Un·e cycliste · il y a 2 semaines": "A cyclist · 2 weeks ago",
+"Y aller": "Go there",
+"Laisser un avis": "Leave a review",
+"Illustration · en pointillés : points OpenStreetMap · en plein : ajoutés par les cyclistes · cerclé d’or : nouveau, en cours de validation":
+  "Illustration · dotted: OpenStreetMap points · solid: added by cyclists · gold ring: new, awaiting review",
+"Ajoute tes bons coins": "Add your favourite spots",
+"Une fontaine qui coule, un abri pour la nuit : pose le point, une photo, un avis. Il est visible tout de suite.": "A fountain that flows, a shelter for the night: drop the point, a photo, a review. It shows up straight away.",
+"« Toujours là ? » : chacun confirme en un geste. Un point qui a disparu ne t'envoie plus au mauvais endroit.": "“Still there?”: anyone can confirm with one tap. A place that's gone no longer sends you the wrong way.",
+"Même sans réseau": "Even with no signal",
+"Télécharge les points d'un pays avant de partir. Ton ultra traverse la frontière ? Sillage te prévient.": "Download a country's points before you leave. Your ultra crosses a border? Sillage lets you know.",
+"Un appui, et Plans, Google Maps ou Waze te guide jusqu'au point. Ta position et la boussole sont sur la carte.": "One tap and Apple Maps, Google Maps or Waze guides you there. Your position and the compass are on the map.",
 "Sillage — la météo sur ta trace": "Sillage — the weather on your route",
 "Sillage, l'app vélo qui te donne la météo sur ta trace GPX : vent, pluie, température, et la meilleure heure pour partir.":
   "Sillage, the cycling app that gives you the weather along your GPX route: wind, rain, temperature, and the best time to set off.",
