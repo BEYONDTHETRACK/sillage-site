@@ -76,7 +76,7 @@ TXT = {
 ", le plus précis ici": ", the most accurate here",
 "Heure de départ": "Start time",
 "Dans l'app": "In the app",
-"Ta trace, ta météo. Voilà ce que tu vois.": "Your route, your weather. Here's what you see.",
+"Ta trace, ta météo. Voilà ce que tu vois.": "Your route. Your weather. Here's what Sillage shows you.",
 "Col du Marais · 64,7 km": "Col du Marais · 64.7 km",
 "Dim. 13:00": "Sun 13:00",
 "Vent dans le dos le long du lac": "Tailwind along the lake",
@@ -256,7 +256,7 @@ TXT = {
 "L'alerte de 7 h": "The 7 am alert",
 "L'aller et le retour résumés avant le petit-déjeuner.": "Your ride in and ride home, summed up before breakfast.",
 "Une vingtaine de modèles météo": "About twenty weather models",
-"Le bon modèle, là où tu roules.": "The right model, where you ride.",
+"Le bon modèle, là où tu roules.": "The most accurate forecast, wherever you ride.",
 "Chaque pays a son service météo, avec un modèle taillé pour son territoire. Sillage en réunit une vingtaine et prend tout seul le plus précis là où passe ta trace. Partout ailleurs, et pour les sorties à plus de quelques jours, le centre européen ECMWF prend le relais. Tu préfères choisir ? Tous sont dans le menu, y compris des modèles d'intelligence artificielle.":
   "Every country has its weather service, with a model built for its own territory. Sillage brings together about twenty of them and automatically picks the most accurate one wherever your route goes. Everywhere else, and for rides more than a few days away, the European centre ECMWF takes over. Prefer to choose? They're all in the menu, including AI models.",
 "Carte de l'Amérique du Nord à l'Europe : modèles nationaux aux États-Unis, au Canada, en Islande et dans toute l'Europe, ECMWF ailleurs":
