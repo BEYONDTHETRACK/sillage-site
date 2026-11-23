@@ -322,7 +322,7 @@ CONF_EN = """
 DEL_FR = """
 <h2>Depuis l'app ou le site</h2>
 <ol>
-<li>Ouvre Sillage : l'app sur ton téléphone, ou la <a href="https://antoinechry.github.io/plan-my-ride/">version web</a>. Connecte-toi.</li>
+<li>Ouvre Sillage : l'app sur ton téléphone, ou la <a href="https://app.sillage-ride.eu/">version web</a>. Connecte-toi.</li>
 <li>Va dans <strong>Moi</strong> (onglet en bas sur téléphone, à gauche sur ordinateur).</li>
 <li>Dans « Mon compte », touche <strong>Supprimer mon compte</strong>.</li>
 <li>Saisis ton mot de passe (ou, si tu te connectes avec Apple ou Google, touche « Recevoir un code par e-mail » et saisis le code) et confirme avec <strong>Supprimer définitivement</strong>.</li>
@@ -346,7 +346,7 @@ DEL_FR = """
 DEL_EN = """
 <h2>From the app or the website</h2>
 <ol>
-<li>Open Sillage: the app on your phone, or the <a href="https://antoinechry.github.io/plan-my-ride/">web version</a>. Sign in.</li>
+<li>Open Sillage: the app on your phone, or the <a href="https://app.sillage-ride.eu/">web version</a>. Sign in.</li>
 <li>Go to <strong>Me</strong> (bottom tab on a phone, left side on a computer).</li>
 <li>Under “My account”, tap <strong>Delete my account</strong>.</li>
 <li>Enter your password (or, if you sign in with Apple or Google, tap “Get a code by e-mail” and enter the code) and confirm with <strong>Delete permanently</strong>.</li>
@@ -402,7 +402,7 @@ CONFIRM_CSS = """<style>
 
 def confirm_body(lang):
     fr = lang == 'fr'
-    app = "https://antoinechry.github.io/plan-my-ride/"
+    app = "https://app.sillage-ride.eu/"
     if fr:
         T = dict(wait="On vérifie ton lien…", okh="Merci{p} !", okl="Ton adresse est confirmée et ton compte Sillage est prêt.",
             okt="Il ne te reste plus qu'à te connecter avec ton e-mail et ton mot de passe, puis à importer ta première trace GPX.",
