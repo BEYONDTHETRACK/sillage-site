@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Désinscription · Sillage</title>
+<meta name="description" content="Désinscription des e-mails Sillage.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:#14201B;font-family:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:#23629A}a:hover{color:#14201B}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #CDD4CE}
+.bar{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#14201B;font-weight:800;font-size:24px;letter-spacing:-.03em}
+.lang{font-size:14px;font-weight:600;text-decoration:none;color:#14201B;border:1px solid #CDD4CE;border-radius:999px;padding:8px 14px;min-height:40px;display:inline-flex;align-items:center}
+main{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8A5A00;margin:0 0 10px}
+h1{font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px}
+.lead{font-size:19px;color:#4C5852;margin:0 0 8px}
+p{margin:0 0 14px}
+footer{background:#121B17;color:#A3AEA8}
+.foot{max-width:1200px;margin:0 auto;padding:32px 24px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:14px}
+.foot a{color:#A3AEA8}
+.foot nav{display:flex;flex-wrap:wrap;gap:24px}
+.foot a[aria-current]{color:#EEF1EC;font-weight:600}
+@media (max-width:560px){main{padding:32px 16px 56px}.bar{padding:10px 16px}.foot{padding:28px 16px 40px}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="brand" href="/"><svg width="40" height="37" viewBox="0 0 64 60" aria-hidden="true">
+<circle cx="17" cy="31" r="10" fill="#14201B"></circle>
+<rect x="5" y="30" width="50" height="13" rx="6.5" fill="#14201B"></rect>
+<circle cx="38" cy="24" r="15" fill="#FFFFFF" stroke="#14201B" stroke-width="5"></circle>
+<g stroke="#E0A21B" stroke-width="2" stroke-linecap="round"><path d="M38 15.5v2.5M38 30v2.5M29.5 24h2.5M44 24h2.5M32 18l1.8 1.8M42.2 28.2L44 30M32 30l1.8-1.8M42.2 19.8L44 18"></path></g>
+<circle cx="38" cy="24" r="4" fill="#E0A21B"></circle>
+<g fill="#3E86C0"><rect x="16" y="47" width="4" height="9" rx="2" transform="rotate(18 18 51)"></rect><rect x="28" y="47" width="4" height="9" rx="2" transform="rotate(18 30 51)"></rect><rect x="40" y="47" width="4" height="9" rx="2" transform="rotate(18 42 51)"></rect></g>
+</svg><span>Sillage</span></a>
+<a class="lang" href="/en/unsubscribe/" hreflang="en">English</a>
+</div></header>
+<main>
+<p class="kicker">Sillage</p>
+<h1>Désinscription</h1>
+<p class="lead">Tu ne veux plus recevoir les e-mails de Sillage ?</p>
+<style>
+.st{display:none}.st.on{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;background:#E0A21B;color:#14201B;font-weight:700;font-size:17px;text-decoration:none;margin:6px 0 18px;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:#c98f12;color:#14201B}
+.btn[disabled]{opacity:.6;cursor:default}
+</style>
+<div id="sAsk" class="st on">
+<p>Confirme ci-dessous : tu ne recevras plus nos e-mails d'information. Ton compte Sillage, si tu en as un, n'est pas touché.</p>
+<button type="button" class="btn" id="go">Me désinscrire</button>
+</div>
+<div id="sOk" class="st">
+<p>Si tu as un compte Sillage, il reste actif. Pour le supprimer, va dans l'app, page Moi.</p>
+<a class="btn" href="/">Retour à Sillage</a>
+</div>
+<div id="sErr" class="st">
+<p id="errTxt"></p>
+<a class="btn" href="/">Retour à Sillage</a>
+</div>
+<p style="margin-top:28px;font-size:15px;color:#4C5852">Un souci ? Écris-nous à <a href="mailto:hello@sillage-ride.eu">hello@sillage-ride.eu</a>.</p>
+<script>
+(function(){
+  var T={"h1": "Désinscription", "lead": "Tu ne veux plus recevoir les e-mails de Sillage ?", "ask": "Confirme ci-dessous : tu ne recevras plus nos e-mails d'information. Ton compte Sillage, si tu en as un, n'est pas touché.", "btn": "Me désinscrire", "wait": "Un instant…", "okh": "C'est fait", "okl": "Tu ne recevras plus les e-mails d'information de Sillage.", "okt": "Si tu as un compte Sillage, il reste actif. Pour le supprimer, va dans l'app, page Moi.", "back": "Retour à Sillage", "errh": "Ce lien ne marche pas", "link": "Il est incomplet ou a été modifié. Écris-nous à hello@sillage-ride.eu et on te désinscrit à la main.", "neterr": "Impossible de joindre Sillage pour l'instant. Réessaie dans un moment.", "help": "Un souci ? Écris-nous à <a href=\"mailto:hello@sillage-ride.eu\">hello@sillage-ride.eu</a>."};
+  var h1=document.querySelector('h1'), lead=document.querySelector('.lead'), go=document.getElementById('go');
+  function show(id){['sAsk','sOk','sErr'].forEach(function(k){document.getElementById(k).classList.toggle('on',k===id);});}
+  function err(kind){h1.textContent=T.errh;lead.textContent='';document.getElementById('errTxt').textContent=T[kind]||T.link;show('sErr');}
+  var q=new URLSearchParams(location.search), e=q.get('e'), t=q.get('t');
+  var lg=document.querySelector('.lang'); if(lg&&location.search) lg.href+=location.search;
+  if(!e||!t) return err('link');
+  // Rien n'est envoyé avant le clic : les robots qui ouvrent les liens des e-mails ne désinscrivent personne.
+  go.addEventListener('click',function(){
+    go.disabled=true; go.textContent=T.wait;
+    fetch('https://bsypkdsnhiepvcnhmfsm.supabase.co/functions/v1/newsletter-signup',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({action:'unsubscribe',e:e,t:t})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(!d||!d.ok) return err(d&&d.error==='link'?'link':'neterr');
+      h1.textContent=T.okh; lead.textContent=T.okl; show('sOk');
+    })
+    .catch(function(){err('neterr');});
+  });
+})();
+</script>
+
+</main>
+<footer><div class="foot">
+<span>© 2026 Sillage · La météo sur ta trace.</span>
+<nav aria-label="Liens légaux"><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/supprimer-mon-compte/">Supprimer mon compte</a><a href="mailto:hello@sillage-ride.eu">Contact</a><a href="#cookies" data-cookies>Gérer mes cookies</a></nav>
+</div></footer>
+<script src="/consent.js" defer></script>
+</body>
+</html>
