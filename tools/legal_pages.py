@@ -194,7 +194,7 @@ CONF_FR = """
 <tbody>
 <tr><td>Compte, parcours, alertes</td><td>Jusqu'à la suppression de ton compte. Un compte sans aucune connexion pendant <strong>3 ans</strong> est supprimé, après un e-mail d'avertissement un mois avant.</td></tr>
 <tr><td>Points, avis et photos de la Carte</td><td>Jusqu'à leur suppression par toi ou à la suppression de ton compte : tout est alors effacé, photos comprises</td></tr>
-<tr><td>Mode démo</td><td>Compte technique effacé après <strong>30 jours</strong> sans visite ; empreinte de l'adresse IP effacée après 2 jours</td></tr>
+<tr><td>Mode démo</td><td>Compte technique effacé <strong>la nuit même</strong>, à minuit (la nuit suivante s'il est créé après 22 h) ; empreinte de l'adresse IP effacée après 2 jours</td></tr>
 <tr><td>Journal d'utilisation</td><td>12 mois</td></tr>
 <tr><td>Décompte des traces du compte gratuit</td><td>13 mois</td></tr>
 <tr><td>Statistiques de visite</td><td>25 mois</td></tr>
@@ -275,7 +275,7 @@ CONF_EN = """
 <tbody>
 <tr><td>Account, routes, alerts</td><td>Until you delete your account. An account with no sign-in for <strong>3 years</strong> is deleted, after a warning e-mail one month before.</td></tr>
 <tr><td>Map points, reviews and photos</td><td>Until you delete them or delete your account: everything, photos included, is then erased</td></tr>
-<tr><td>Demo mode</td><td>Technical account erased after <strong>30 days</strong> without a visit; IP fingerprint erased after 2 days</td></tr>
+<tr><td>Demo mode</td><td>Technical account erased <strong>the same night</strong> at midnight (the following night if created after 10 pm); IP fingerprint erased after 2 days</td></tr>
 <tr><td>Usage log</td><td>12 months</td></tr>
 <tr><td>Free account route count</td><td>13 months</td></tr>
 <tr><td>Visit statistics</td><td>25 months</td></tr>
