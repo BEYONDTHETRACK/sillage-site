@@ -1013,6 +1013,7 @@ window.PMR_I18N = {
     "À partir du {0}, {1}. Clique sur un jour pour le détail.": "From {0}, {1}. Click a day for details.",
     "À ton passage": "When you pass",
     "Écart": "Off route",
+    "Plutôt ensoleillé": "Mostly sunny",
     "Éclaircies": "Sunny spells",
     "Épicerie": "Grocery",
     "Étapes de même distance.": "Stages of the same distance.",
