@@ -2502,6 +2502,11 @@ body:is([data-mode="ride"],[data-mode="ultra"]) .chart-keys .ck-v1,body:not([dat
   </div>
   <div class="ft"><button type="button" class="btn primary" id="plusOk" autofocus>OK</button></div>
 </dialog>
+<dialog class="help guest-dlg" id="mapSoonDlg" aria-labelledby="mapSoonTitle">
+  <div class="hd"><h2 id="mapSoonTitle">🎁 La Carte, c'est une surprise</h2><button type="button" class="x" id="mapSoonX" aria-label="Fermer">×</button></div>
+  <div class="bd"><p>Elle arrive bientôt avec l'app Sillage. On te la garde pour plus tard !</p></div>
+  <div class="ft"><button type="button" class="btn primary" id="mapSoonOk" autofocus>OK</button></div>
+</dialog>
 <dialog class="exp-dlg" id="expDlg" aria-labelledby="expTitle">
   <h2 id="expTitle">Exporter l'image</h2>
   <p class="hint">Choisis le format de l'image.</p>
@@ -8527,7 +8532,7 @@ const TOUR_STEPS = {
   intro: [
     { t: "Bienvenue dans la démo de Sillage", p: "Tu essaies Sillage sur des traces d'exemple, avec une météo d'exemple (pas une prévision). Cette visite te montre l'essentiel en une minute." },
     { sel: '.top .modes', t: "Trois façons de rouler", p: "Sortie pour une journée, Ultra pour plusieurs jours, Commute pour ton trajet quotidien. Chaque page a sa propre trace d'exemple." },
-    { sel: '.tabbar', t: "Tes autres pages", p: "Mes parcours et la Carte des points utiles : touche-les pour les découvrir, une courte explication t'attend à chaque fois." }
+    { sel: '.tabbar', t: "Tes autres pages", p: "Mes parcours, avec toutes les traces d'exemple, et une surprise pour plus tard." }
   ],
   ride: [
     { sel: '#chips', t: "Ton départ en un coup d'œil", p: "Touche le parcours, le jour, l'heure ou la vitesse : tout est recalculé aussitôt avec la météo de ce créneau." },
@@ -9024,7 +9029,8 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.b
 $('#tabLib').addEventListener('click', lpOpen);
 /* Page « Mes parcours » (essai du 24/10/2026) : liste des parcours en fiches (miniature du tracé, km, D+, dernière ouverture),
    recherche, tri, ouvrir / renommer / supprimer. Onglet « Parcours » sur téléphone, bouton « Voir tous mes parcours » ailleurs. */
-const LP = { sort: 'recent', kind: 'all', open: '', ren: '', del: '', delT: 0, thumbs: null, fetching: false, maps: {}, mapsLoaded: false, mapsBusy: 0, mapsFail: new Map(), sheet: '', press: null };
+const LP = { sort: (() => { try { const v = localStorage.getItem('pmr-lp-sort'); return ['recent', 'km', 'name'].includes(v) ? v : 'recent'; } catch (e) { return 'recent'; } })(), // tri gardé (pmr-lp-sort, 26/11/2026)
+  kind: 'all', open: '', ren: '', del: '', delT: 0, thumbs: null, fetching: false, maps: {}, mapsLoaded: false, mapsBusy: 0, mapsFail: new Map(), sheet: '', press: null };
 function lpThumbs() { if (!LP.thumbs) { try { LP.thumbs = JSON.parse(localStorage.getItem('pmr-thumbs') || '{}') || {}; } catch (e) { LP.thumbs = {}; } } return LP.thumbs; }
 function thumbOf(pts) { // tracé ramené dans un carré de 64 (projection simple, ~90 points)
   const step = Math.max(1, Math.floor(pts.length / 90)), q = []; for (let i = 0; i < pts.length; i += step) q.push(pts[i]); q.push(pts[pts.length - 1]);
@@ -9273,7 +9279,7 @@ $('#outPage').addEventListener('click', e => { const b = e.target.closest('butto
 $('#libPageX').addEventListener('click', lpClose);
 for (const a of document.querySelectorAll('.modes a, .tabbar a[data-mode]')) a.addEventListener('click', pageClose);
 $('#lpQ').addEventListener('input', () => { LP.open = LP.ren = ''; lpRender(); });
-$('#lpSort').addEventListener('change', () => { LP.sort = $('#lpSort').value; lpRender(); });
+$('#lpSort').addEventListener('change', () => { LP.sort = $('#lpSort').value; try { localStorage.setItem('pmr-lp-sort', LP.sort); } catch (e) {} lpRender(); });
 $('#lpKind').addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if (!b) return; LP.kind = b.dataset.v; LP.open = LP.ren = LP.del = ''; lpRender(); });
 $('#lpList').addEventListener('click', async e => {
   const b = e.target.closest('button'); if (!b) return; const d = b.dataset;
@@ -10710,6 +10716,7 @@ function pmInitMap(rot) {
   pmChips(); pmOriSet(PM.ori); pmCompassUI();
 }
 async function pmOpen() {
+  if (DEMO_WEB) { const d = $('#mapSoonDlg'); if (d && !d.open) d.showModal(); return; } // démo du site : la Carte est gardée en surprise (26/11/2026)
   pageOpen('mapPage', '#tabMap');
   await pmInit(); if (!PM.map || $('#mapPage').hidden) return;
   setTimeout(() => {
@@ -10728,6 +10735,8 @@ async function pmOpen() {
   }, 30);
 }
 $('#tabMap').addEventListener('click', pmOpen);
+$('#mapSoonOk').addEventListener('click', () => $('#mapSoonDlg').close());
+$('#mapSoonX').addEventListener('click', () => $('#mapSoonDlg').close());
 $('#pmRoute').addEventListener('click', pmFitRoute);
 /* Ma position et orientation de la carte (31/10/2026 ; trois modes d'orientation le 06/11/2026). Suivi continu (watchPosition) ;
    la position reste sur l'appareil. Boussole #pmCompass → menu #pmOri, trois modes (PM.ori, localStorage pmr-pm-ori) :
